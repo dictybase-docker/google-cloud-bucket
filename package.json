@@ -13,8 +13,8 @@
     "watch": "tsc -w",
     "test": "jest",
     "test:watch": "jest --watch",
-    "upgrade": "npm i cdktf@latest cdktf-cli@latest",
-    "upgrade:next": "npm i cdktf@next cdktf-cli@next"
+    "upgrade": "yarn upgrade cdktf@latest cdktf-cli@latest",
+    "upgrade:next": "yarn upgrade cdktf@next cdktf-cli@next"
   },
   "engines": {
     "node": ">=14.0"
@@ -22,6 +22,7 @@
   "dependencies": {
     "@cdktf/provider-google": "5.0.3",
     "cdktf": "^0.15.3",
+    "cdktf-cli": "^0.15.3",
     "constructs": "^10.1.242"
   },
   "devDependencies": {
