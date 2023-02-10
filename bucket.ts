@@ -2,6 +2,8 @@ import * as cdktf from "cdktf"
 import * as google from "./.gen/providers/google"
 import { Construct } from "constructs"
 import { TerraformStack } from "cdktf"
+import * as path from "path"
+import * as fs from "fs"
 
 class BucketStack extends TerraformStack {
   constructor(scope: Construct, id: string) {
@@ -25,14 +27,6 @@ class BucketStack extends TerraformStack {
       default: "us-central1-c",
       description: "gcp zone name within a region",
     })
-    const serviceAccountFile = new cdktf.TerraformVariable(
-      this,
-      "service_account_file",
-      {
-        default: "credentials.json",
-        description: "path to service account key file",
-      },
-    )
     new google.storageBucket.StorageBucket(this, "private-cluster", {
       forceDestroy: true,
       name: bucketName.value,
@@ -41,12 +35,26 @@ class BucketStack extends TerraformStack {
         enabled: true,
       },
     })
+    const content = this._read_credentials("credentials.json")
     new google.provider.GoogleProvider(this, "google", {
-      credentials: serviceAccountFile.value,
+      credentials: content,
       project: projectId.value,
       region: region.value,
       zone: zone.value,
     })
+  }
+  _read_credentials(name: string) {
+    let cred_path: string = ""
+    const default_path = path.join(process.cwd(), name)
+    if (fs.existsSync(default_path)) {
+      cred_path = default_path
+    } else {
+      const path_from_env = process.env["TF_VAR_service_account_file"]
+      if (path_from_env) {
+        cred_path = path.join(process.cwd(), path_from_env)
+      }
+    }
+    return fs.readFileSync(cred_path).toString()
   }
 }
 
