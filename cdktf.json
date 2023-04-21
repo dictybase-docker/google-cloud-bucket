@@ -1,14 +1,12 @@
 {
-  "language": "typescript",
-  "app": "npx ts-node main.ts",
-  "projectId": "60a24172-4f39-496f-92ee-fca580712996",
-  "sendCrashReports": "false",
-  "terraformProviders": [
-    "hashicorp/google@4.51.0"
-  ],
-  "terraformModules": [],
-  "context": {
-    "excludeStackIdFromLogicalIds": "true",
-    "allowSepCharsInLogicalIds": "true"
-  }
+	"language": "typescript",
+	"app": "yarn tsx src/main.ts",
+	"projectId": "60a24172-4f39-496f-92ee-fca580712996",
+	"sendCrashReports": "false",
+	"terraformProviders": [],
+	"terraformModules": [],
+	"context": {
+		"excludeStackIdFromLogicalIds": "true",
+		"allowSepCharsInLogicalIds": "true"
+	}
 }
