@@ -42,9 +42,6 @@
 			"^.+\\.(t|j)sx?$": [
 				"@swc/jest"
 			]
-		},
-		"setupFilesAfterEnv": [
-			"<rootDir>/src/setup-jest-cdktf.js"
-		]
+		}
 	}
 }
