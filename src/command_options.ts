@@ -45,6 +45,24 @@ const argv = yargs(process.argv.slice(2))
       type: "string",
       default: "../credentials.json",
     },
+    lb: {
+      alias: "log-bucket",
+      description: "name of logging bucket",
+      type: "string",
+      default: "dicty-log-journal",
+    },
+    an: {
+      alias: "analytics",
+      type: "boolean",
+      description: "analytics will be on or off for logging bucket",
+      default: true,
+    },
+    rt: {
+      alias: "retention",
+      type: "number",
+      default: 90,
+      description: "retention time of log in the bucket",
+    },
   })
   .parseSync()
 
