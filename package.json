@@ -43,9 +43,6 @@
 				"@swc/jest"
 			]
 		},
-		"setupFiles": [
-			"<rootDir>/src/test-environment.ts"
-		],
 		"setupFilesAfterEnv": [
 			"<rootDir>/src/setup-jest-cdktf.js"
 		]
