@@ -10,7 +10,7 @@ describe("BucketStack Application", () => {
     projectId: "chain",
     zone: "central",
     region: "central1",
-    credentials: "../test_cred.json",
+    credentials: "test_cred.json",
   }
   let stack: BucketStack
   let app: App
