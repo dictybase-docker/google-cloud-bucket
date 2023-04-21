@@ -1,9 +1,9 @@
 import * as cdktf from "cdktf"
-import * as google from "./.gen/providers/google"
 import { Construct } from "constructs"
 import { TerraformStack } from "cdktf"
 import * as path from "path"
 import * as fs from "fs"
+import { StorageBucket } from "@cdktf/provider-google/lib/storage-bucket"
 
 class BucketStack extends TerraformStack {
   constructor(scope: Construct, id: string) {
@@ -27,7 +27,7 @@ class BucketStack extends TerraformStack {
       default: "us-central1-c",
       description: "gcp zone name within a region",
     })
-    new google.storageBucket.StorageBucket(this, "private-cluster", {
+    new StorageBucket(this, "private-cluster", {
       forceDestroy: true,
       name: bucketName.value,
       location: "US",
