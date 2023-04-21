@@ -1,15 +1,21 @@
 import "cdktf/lib/testing/adapters/jest" // Load types for expect matchers
 import { Testing, App } from "cdktf"
-import BucketStack from "../bucket"
-import { GoogleProvider } from "../.gen/providers/google/provider"
-import { StorageBucket } from "../.gen/providers/google/storage-bucket"
+import BucketStack from "../src/bucket"
+import { StorageBucket } from "@cdktf/provider-google/lib/storage-bucket"
+import { GoogleProvider } from "@cdktf/provider-google/lib/provider"
 
 describe("BucketStack Application", () => {
   let stack: BucketStack
   let app: App
   beforeAll(() => {
     app = Testing.app()
-    stack = new BucketStack(app, "test-bucket")
+    stack = new BucketStack(app, "test-bucket", {
+      bucketName: "django",
+      projectId: "chain",
+      zone: "central",
+      region: "central1",
+      credentials: "../test_cred.json",
+    })
   })
   test("check if it has google provider", () => {
     expect(Testing.synth(stack)).toHaveProvider(GoogleProvider)
