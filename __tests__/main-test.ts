@@ -5,17 +5,18 @@ import { StorageBucket } from "@cdktf/provider-google/lib/storage-bucket"
 import { GoogleProvider } from "@cdktf/provider-google/lib/provider"
 
 describe("BucketStack Application", () => {
+  const options = {
+    bucketName: "django",
+    projectId: "chain",
+    zone: "central",
+    region: "central1",
+    credentials: "../test_cred.json",
+  }
   let stack: BucketStack
   let app: App
   beforeAll(() => {
     app = Testing.app()
-    stack = new BucketStack(app, "test-bucket", {
-      bucketName: "django",
-      projectId: "chain",
-      zone: "central",
-      region: "central1",
-      credentials: "../test_cred.json",
-    })
+    stack = new BucketStack(app, "test-bucket", options)
   })
   test("check if it has google provider", () => {
     expect(Testing.synth(stack)).toHaveProvider(GoogleProvider)
