@@ -23,6 +23,9 @@ describe("BucketStack Application", () => {
   })
   test("check if it has storage bucket resource", () => {
     expect(Testing.synth(stack)).toHaveResource(StorageBucket)
+    expect(Testing.synth(stack)).toHaveResourceWithProperties(StorageBucket, {
+      name: options.bucketName,
+    })
   })
   test("check if the produced terraform configuration is valid", () => {
     expect(Testing.fullSynth(stack)).toBeValidTerraform()
