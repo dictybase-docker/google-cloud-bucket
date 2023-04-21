@@ -1,5 +1,5 @@
 import { App } from "cdktf"
-import BucketStack from "./bucket"
+import { BucketStack } from "./bucket"
 import { LogBucketStack } from "./logBucketStack"
 import { argv } from "./command_options"
 

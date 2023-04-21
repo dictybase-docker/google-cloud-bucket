@@ -1,6 +1,6 @@
 import "cdktf/lib/testing/adapters/jest" // Load types for expect matchers
 import { Testing, App } from "cdktf"
-import BucketStack from "../src/bucket"
+import { BucketStack } from "../src/bucket"
 import { LogBucketStack } from "../src/logBucketStack"
 import { StorageBucket } from "@cdktf/provider-google/lib/storage-bucket"
 import { GoogleProvider } from "@cdktf/provider-google/lib/provider"

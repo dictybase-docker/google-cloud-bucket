@@ -33,4 +33,4 @@ class BucketStack extends TerraformStack {
   }
 }
 
-export default BucketStack
+export { BucketStack }
