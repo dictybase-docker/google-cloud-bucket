@@ -27,7 +27,7 @@ describe("BucketStack Application", () => {
   test("check if the produced terraform configuration is valid", () => {
     expect(Testing.fullSynth(stack)).toBeValidTerraform()
   })
-  /* test("check if the terraform configuration can be planned", () => {
+  test("check if the terraform configuration can be planned", () => {
     expect(Testing.fullSynth(stack)).toPlanSuccessfully()
-  }) */
+  })
 })
