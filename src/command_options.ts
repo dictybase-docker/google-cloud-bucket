@@ -43,7 +43,7 @@ const argv = yargs(process.argv.slice(2))
       alias: "credentials",
       description: "service account credentials file for google provider",
       type: "string",
-      default: "../credentials.json",
+      default: "credentials.json",
     },
     lb: {
       alias: "log-bucket",
