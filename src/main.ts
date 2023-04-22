@@ -11,7 +11,7 @@ new BucketStack(app, "gcs-bucket-cdktf", {
   region: argv.rg,
   credentials: argv.c,
 })
-new LogBucketStack(app, `log-bucket-${argv.pi}`, {
+new LogBucketStack(app, `log-bucket`, {
   provider: {
     credentials: argv.c,
     zone: argv.z,
