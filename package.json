@@ -22,9 +22,10 @@
 	},
 	"dependencies": {
 		"@cdktf/provider-google": "6.x",
-		"constructs": "^10.1.242",
 		"cdktf": "0.16.x",
-		"cdktf-cli": "0.16.x"
+		"cdktf-cli": "0.16.x",
+		"constructs": "^10.1.242",
+		"yargs": "^17.7.1"
 	},
 	"devDependencies": {
 		"@swc/core": "^1.3.34",
