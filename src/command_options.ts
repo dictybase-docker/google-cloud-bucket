@@ -29,7 +29,7 @@ const argv = yargs(process.argv.slice(2))
     bp: {
       alias: "bucket-prefix",
       type: "string",
-      default: "k0s-cluster-cdktf",
+      default: "log-bucket",
       description:
         "GCS bucket folder prefix where terraform remote state is stored.",
     },
