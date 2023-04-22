@@ -3,7 +3,7 @@ import yargs from "yargs/yargs"
 const argv = yargs(process.argv.slice(2))
   .options({
     pi: {
-      alias: "project_id",
+      alias: "project-id",
       type: "string",
       demandOption: true,
       description: "the google cloud project id",
