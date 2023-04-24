@@ -413,10 +413,10 @@
     fs-extra "^8.1.0"
     jsii-srcmak "^0.1.867"
 
-"@cdktf/provider-google@6.x":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@cdktf/provider-google/-/provider-google-6.0.0.tgz#f07d1a2cc80f4176fe8f19f2fbe383af8234b7c8"
-  integrity sha512-pW9yhBqjuVNr0x+nNSogg3FIWeGI2uX00bnG5hP5HBMRVNIynUVz5OIg4yY6DAzBsH8WxAx5pZ9IjLl1emAQSw==
+"@cdktf/provider-google@7.x":
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/@cdktf/provider-google/-/provider-google-7.0.1.tgz#25f635e6643e02b2d0bd71d1c61bdb9caf5a2fcc"
+  integrity sha512-bpoMsmemjDgi8Fkvndd1B2TK+nNrLyzuTCHLj28+KCgs3TPhBX/JgqEE6I8+obIHld6qBivT0l585/px5aQSMA==
 
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
