@@ -1,7 +1,7 @@
 # GCS bucket
 
 [![License](https://img.shields.io/badge/License-BSD%202--Clause-blue.svg)](LICENSE)
-![GitHub action](https://github.com/dictybase-docker/google-cloud-bucket/workflows/Node%20CI%20Develop/badge.svg)
+[![Continuos integration](https://github.com/dictybase-docker/google-cloud-bucket/actions/workflows/ci-develop.yml/badge.svg?branch=develop)](https://github.com/dictybase-docker/google-cloud-bucket/actions/workflows/ci-develop.yml)
 [![codecov](https://codecov.io/gh/dictybase-docker/google-cloud-bucket/branch/develop/graph/badge.svg)](https://codecov.io/gh/dictybase-docker/google-cloud-bucket)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9b16d0885be470635ed6/maintainability)](https://codeclimate.com/github/dictybase-docker/google-cloud-bucket/maintainability)
 ![Last commit](https://badgen.net/github/last-commit/dictybase-docker/google-cloud-bucket/develop)
