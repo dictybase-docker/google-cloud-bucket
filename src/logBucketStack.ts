@@ -3,6 +3,7 @@ import { TerraformStack, GcsBackend } from "cdktf"
 import { readFileSync } from "fs"
 import { GoogleProvider } from "@cdktf/provider-google/lib/provider"
 import { LoggingProjectBucketConfig } from "@cdktf/provider-google/lib/logging-project-bucket-config"
+import { LoggingProjectSink } from "@cdktf/provider-google/lib/logging-project-sink"
 
 type ProviderProperties = {
   credentials: string
@@ -54,6 +55,11 @@ class LogBucketStack extends TerraformStack {
       bucketId: bucket.name,
       retentionDays: bucket.retention,
       enableAnalytics: bucket.analytics,
+    })
+    new LoggingProjectSink(this, `${id}-logging-sink`, {
+      name: `${id}-logging-sink`,
+      destination: `logging.googleapis.com/projects/${bucket.project}/locations/global/buckets/${bucket.name}`,
+      filter: "resource.type = gce_instance",
     })
   }
 }
