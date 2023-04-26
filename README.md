@@ -1,4 +1,12 @@
 # GCS bucket
+[![License](https://img.shields.io/badge/License-BSD%202--Clause-blue.svg)](LICENSE)
+![GitHub action](https://github.com/dictybase-docker/google-cloud-bucket/workflows/Node%20CI%20Develop/badge.svg)
+[![codecov](https://codecov.io/gh/dictybase-docker/google-cloud-bucket/branch/develop/graph/badge.svg)](https://codecov.io/gh/dictybase-docker/google-cloud-bucket)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9b16d0885be470635ed6/maintainability)](https://codeclimate.com/github/dictybase-docker/google-cloud-bucket/maintainability)
+![Last commit](https://badgen.net/github/last-commit/dictybase-docker/google-cloud-bucket/develop)
+[![Funding](https://badgen.net/badge/Funding/Rex%20L%20Chisholm,dictyBase,DCR/yellow?list=|)](https://reporter.nih.gov/project-details/10024726)
+
+
 Create a GCS bucket through terraform. The purpose of this terraform setup to
 create a bucket that will be used for storing remote state for other terraform
 runs.
