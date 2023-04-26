@@ -5,6 +5,7 @@ import { LogBucketStack } from "../src/logBucketStack"
 import { StorageBucket } from "@cdktf/provider-google/lib/storage-bucket"
 import { GoogleProvider } from "@cdktf/provider-google/lib/provider"
 import { LoggingProjectBucketConfig } from "@cdktf/provider-google/lib/logging-project-bucket-config"
+import { LoggingProjectSink } from "@cdktf/provider-google/lib/logging-project-sink"
 
 describe("BucketStack Application", () => {
   const options = {
@@ -77,6 +78,17 @@ describe("LogBucketStack application", () => {
         retention_days: options.bucket.retention,
         enable_analytics: options.bucket.analytics,
         bucket_id: options.bucket.name,
+      },
+    )
+  })
+  test("check if it has logging project sink", () => {
+    expect(Testing.synth(stack)).toHaveResource(LoggingProjectSink)
+    expect(Testing.synth(stack)).toHaveResourceWithProperties(
+      LoggingProjectSink,
+      {
+        filter: "resource.type = gce_instance",
+        destination: `logging.googleapis.com/projects/${options.bucket.project}/locations/global/buckets/${options.bucket.name}`,
+        name: "test-log-bucket-logging-sink",
       },
     )
   })
