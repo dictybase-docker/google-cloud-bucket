@@ -24,7 +24,7 @@
 	"dependencies": {
 		"@cdktf/provider-google": "7.x",
 		"cdktf": "0.16.x",
-		"cdktf-cli": "0.19.x",
+		"cdktf-cli": "0.20.x",
 		"constructs": "^10.3.0",
 		"yargs": "^17.7.2"
 	},
